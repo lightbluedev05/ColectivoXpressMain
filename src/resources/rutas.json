@@ -1,0 +1,30 @@
+[
+  {
+    "origen": "Lima",
+    "destino": "Arequipa",
+    "tiempo_aproximado": "12h",
+    "precio": 1.5,
+    "precio_oferta": 0.0
+  },
+  {
+    "origen": "Lima",
+    "destino": "Tacna",
+    "tiempo_aproximado": "10h",
+    "precio": 1.5,
+    "precio_oferta": 0.0
+  },
+  {
+    "origen": "Lima",
+    "destino": "Chancay",
+    "tiempo_aproximado": "10",
+    "precio": 1.5,
+    "precio_oferta": 0.0
+  },
+  {
+    "origen": "Lima",
+    "destino": "Ica",
+    "tiempo_aproximado": "6",
+    "precio": 1.5,
+    "precio_oferta": 0.0
+  }
+]

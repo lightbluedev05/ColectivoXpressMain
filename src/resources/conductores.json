@@ -1,0 +1,74 @@
+[
+  {
+    "nombres": "Miguel",
+    "apellidos": "Solis",
+    "telefono": "999999999",
+    "dni": "12345678",
+    "distrito": "Comas",
+    "fecha_nacimiento": "13/01/2000",
+    "contrasena": "1234",
+    "dias_descanso": [],
+    "viaje_actual": {
+      "id": "11213",
+      "fecha": "2024-10-22",
+      "ruta": {
+        "origen": "Lima",
+        "destino": "Ica",
+        "tiempo_aproximado": "6",
+        "precio": 1.5,
+        "precio_oferta": 0.0
+      },
+      "capacidad_pasajeros": 0,
+      "pasajeros": [],
+      "dni_conductor": "12345678"
+    }
+  },
+  {
+    "nombres": "Ricardo",
+    "apellidos": "Matamoros",
+    "telefono": "999999999",
+    "dni": "87654321",
+    "distrito": "San Miguel",
+    "fecha_nacimiento": "10/07/2000",
+    "contrasena": "1234",
+    "dias_descanso": [],
+    "viaje_actual": {
+      "id": "69859",
+      "fecha": "2024-10-22",
+      "ruta": {
+        "origen": "Lima",
+        "destino": "Chancay",
+        "tiempo_aproximado": "10",
+        "precio": 1.5,
+        "precio_oferta": 0.0
+      },
+      "capacidad_pasajeros": 10,
+      "pasajeros": [],
+      "dni_conductor": "87654321"
+    }
+  },
+  {
+    "nombres": "Juan",
+    "apellidos": "Fujimori",
+    "telefono": "9999999999",
+    "dni": "11111111",
+    "distrito": "SMP",
+    "fecha_nacimiento": "00/00/00",
+    "contrasena": "1234",
+    "dias_descanso": [],
+    "viaje_actual": {
+      "id": "94417",
+      "fecha": "2024-10-22",
+      "ruta": {
+        "origen": "Lima",
+        "destino": "Tacna",
+        "tiempo_aproximado": "10h",
+        "precio": 1.5,
+        "precio_oferta": 0.0
+      },
+      "capacidad_pasajeros": 10,
+      "pasajeros": [],
+      "dni_conductor": "11111111"
+    }
+  }
+]

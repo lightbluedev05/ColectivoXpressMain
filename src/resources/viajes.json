@@ -1,0 +1,44 @@
+[
+  {
+    "id": "11213",
+    "fecha": "2024-10-22",
+    "ruta": {
+      "origen": "Lima",
+      "destino": "Ica",
+      "tiempo_aproximado": "6",
+      "precio": 1.5,
+      "precio_oferta": 0.0
+    },
+    "capacidad_pasajeros": 10,
+    "pasajeros": [],
+    "dni_conductor": "12345678"
+  },
+  {
+    "id": "69859",
+    "fecha": "2024-10-22",
+    "ruta": {
+      "origen": "Lima",
+      "destino": "Chancay",
+      "tiempo_aproximado": "10",
+      "precio": 1.5,
+      "precio_oferta": 0.0
+    },
+    "capacidad_pasajeros": 10,
+    "pasajeros": [],
+    "dni_conductor": "87654321"
+  },
+  {
+    "id": "94417",
+    "fecha": "2024-10-22",
+    "ruta": {
+      "origen": "Lima",
+      "destino": "Tacna",
+      "tiempo_aproximado": "10h",
+      "precio": 1.5,
+      "precio_oferta": 0.0
+    },
+    "capacidad_pasajeros": 10,
+    "pasajeros": [],
+    "dni_conductor": "11111111"
+  }
+]
