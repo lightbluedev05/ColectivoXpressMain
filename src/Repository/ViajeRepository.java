@@ -12,7 +12,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ViajeRepository {
+public class ViajeRepository implements CRUD<Viaje>{
 
     private static final String RUTA_ARCHIVO = "src/resources/viajes.json";
 
@@ -24,8 +24,8 @@ public class ViajeRepository {
     }
 
     private static Viaje convertirDto_Viaje(ViajeDTO dto) {
-        Ruta ruta = RutaRepository.buscar_ruta(dto.id_ruta); // Buscar ruta por id_ruta
-        Conductor conductor = ConductorRepository.buscar_conductor(dto.dni_conductor); // Buscar conductor por DNI
+        Ruta ruta = new RutaRepository().buscar(dto.id_ruta); // Buscar ruta por id_ruta
+        Conductor conductor = new ConductorRepository().buscar(dto.dni_conductor); // Buscar conductor por DNI
         return new Viaje(dto.id_viaje, LocalDate.parse(dto.fecha_salida), ruta, conductor);
     }
 
@@ -38,7 +38,8 @@ public class ViajeRepository {
         return dto;
     }
 
-    public static boolean crear_viaje(Viaje nuevo_viaje) {
+    @Override
+    public boolean crear(Viaje nuevo_viaje) {
         List<ViajeDTO> viajes = null;
 
         try (Reader reader = new FileReader(RUTA_ARCHIVO)) {
@@ -72,7 +73,8 @@ public class ViajeRepository {
         }
     }
 
-    public static Viaje buscar_viaje(String id_viaje) {
+    @Override
+    public Viaje buscar(String id_viaje) {
         List<ViajeDTO> viajes = null;
 
         try (Reader reader = new FileReader(RUTA_ARCHIVO)) {
@@ -95,7 +97,8 @@ public class ViajeRepository {
         return null;
     }
 
-    public static boolean actualizar_viaje(Viaje viaje_editar) {
+    @Override
+    public boolean actualizar(Viaje viaje_editar) {
         List<ViajeDTO> viajes = null;
 
         try (Reader reader = new FileReader(RUTA_ARCHIVO)) {
@@ -129,7 +132,8 @@ public class ViajeRepository {
         }
     }
 
-    public static boolean eliminar_viaje(String id_viaje){
+    @Override
+    public boolean eliminar(String id_viaje){
         List<ViajeDTO> viajes = null;
 
         try (Reader reader = new FileReader(RUTA_ARCHIVO)) {
@@ -163,7 +167,8 @@ public class ViajeRepository {
         }
     }
 
-    public static List<Viaje> listar_viajes() {
+    @Override
+    public List<Viaje> listar() {
         List<ViajeDTO> viajesDto = null;
         List<Viaje> viajes = new ArrayList<>();
 

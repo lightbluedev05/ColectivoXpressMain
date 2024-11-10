@@ -10,7 +10,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PasajeroRepository {
+public class PasajeroRepository implements CRUD<Pasajero>{
 
     private static final String RUTA_ARCHIVO = "src/resources/pasajeros.json";
 
@@ -43,8 +43,9 @@ public class PasajeroRepository {
         pasajerodto.departamento = pasajero.get_departamento();
         return pasajerodto;
     }
-
-    public static boolean crear_pasajero(Pasajero nuevo_pasajero){
+    
+    @Override
+    public boolean crear(Pasajero nuevo_pasajero){
         List<PasajeroDTO> pasajeros = null;
 
         try (Reader reader = new FileReader(RUTA_ARCHIVO)) {
@@ -77,8 +78,9 @@ public class PasajeroRepository {
             return false;
         }
     }
-
-    public static Pasajero buscar_pasajero(String dni){
+    
+    @Override
+    public Pasajero buscar(String dni){
         List<PasajeroDTO> pasajeros = null;
 
         try (Reader reader = new FileReader(RUTA_ARCHIVO)) {
@@ -99,7 +101,8 @@ public class PasajeroRepository {
         return null;
     }
 
-    public static boolean actualizar_pasajero(Pasajero pasajero_editar){
+    @Override
+    public boolean actualizar(Pasajero pasajero_editar){
         List<PasajeroDTO> pasajeros = null;
 
         try (Reader reader = new FileReader(RUTA_ARCHIVO)) {
@@ -133,7 +136,8 @@ public class PasajeroRepository {
         }
     }
 
-    public static boolean eliminar_pasajero(String dni){
+    @Override
+    public boolean eliminar(String dni){
         List<PasajeroDTO> pasajeros = null;
 
         try (Reader reader = new FileReader(RUTA_ARCHIVO)) {
@@ -167,7 +171,8 @@ public class PasajeroRepository {
         }
     }
 
-    public static List<Pasajero> listar_pasajeros(){
+    @Override
+    public List<Pasajero> listar(){
         List<PasajeroDTO> pasajeros = null;
         List<Pasajero> pasajeros2 = new ArrayList<>();
 

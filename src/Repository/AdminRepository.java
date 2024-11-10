@@ -13,29 +13,13 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
-public class AdminRepository {
+public class AdminRepository implements CRUD<Admin>{
 
     private static final String RUTA_ARCHIVO = "src/resources/admins.json";
 
-    private static class AdminDTO {
-        private String codigo;
-        private String contrasena;
-    }
-
-    private static Admin convertirDto_Admin(AdminDTO adminDTO) {
-        return new Admin(adminDTO.codigo, adminDTO.contrasena);
-    }
-
-    private static AdminDTO convertirAdmin_Dto(Admin admin) {
-        AdminDTO adminDto = new AdminDTO();
-        adminDto.codigo = admin.get_codigo();
-        adminDto.contrasena = admin.get_contrasena();
-        return adminDto;
-    }
-
-    public static boolean crear_admin(Admin nuevo_admin){
+    @Override
+    public boolean crear(Admin nuevo_admin) {
         List<AdminDTO> admins = null;
 
         try (Reader reader = new FileReader(RUTA_ARCHIVO)) {
@@ -69,7 +53,8 @@ public class AdminRepository {
         }
     }
 
-    public static Admin buscar_admin(String codigo){
+    @Override
+    public Admin buscar(String codigo) {
         List<AdminDTO> admins = null;
 
         try (Reader reader = new FileReader(RUTA_ARCHIVO)) {
@@ -91,7 +76,8 @@ public class AdminRepository {
         return null;
     }
 
-    public static boolean actualizar_admin(Admin admin_editar){
+    @Override
+    public boolean actualizar(Admin admin_editar) {
         List<AdminDTO> admins = null;
 
         try (Reader reader = new FileReader(RUTA_ARCHIVO)) {
@@ -131,7 +117,8 @@ public class AdminRepository {
         }
     }
 
-    public static boolean eliminar_admin(String codigo){
+    @Override
+    public boolean eliminar(String codigo) {
         List<AdminDTO> admins = null;
 
         try (Reader reader = new FileReader(RUTA_ARCHIVO)) {
@@ -171,7 +158,8 @@ public class AdminRepository {
         }
     }
 
-    public static List<Admin> listar_admins(){
+    @Override
+    public List<Admin> listar() {
         List<Admin> admins = new ArrayList<>();
         List<AdminDTO> adminsDTO = null;
 
@@ -189,6 +177,22 @@ public class AdminRepository {
         }
 
         return admins;
+    }
+
+    private static class AdminDTO {
+        private String codigo;
+        private String contrasena;
+    }
+
+    private static Admin convertirDto_Admin(AdminDTO adminDTO) {
+        return new Admin(adminDTO.codigo, adminDTO.contrasena);
+    }
+
+    private static AdminDTO convertirAdmin_Dto(Admin admin) {
+        AdminDTO adminDto = new AdminDTO();
+        adminDto.codigo = admin.get_codigo();
+        adminDto.contrasena = admin.get_contrasena();
+        return adminDto;
     }
 
 

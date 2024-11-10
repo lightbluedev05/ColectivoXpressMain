@@ -35,17 +35,17 @@ public class Conductor extends Usuario{
         this.distrito = distrito;
         this.provincia = provincia;
         this.departamento = departamento;
-        return ConductorRepository.actualizar_conductor(this);
+        return new ConductorRepository().actualizar(this);
     }
 
     @Override
     public boolean actualizar_contrasena(String nueva_contrasena) {
         this.contrasena = nueva_contrasena;
-        return ConductorRepository.actualizar_conductor(this);
+        return new ConductorRepository().actualizar(this);
     }
 
     public static boolean login(String dni, String contrasena) {
-        Conductor conductor = ConductorRepository.buscar_conductor(dni);
+        Conductor conductor = new ConductorRepository().buscar(dni);
         if(conductor == null){
             return false;
         }

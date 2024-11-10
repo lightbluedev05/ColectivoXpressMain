@@ -14,7 +14,7 @@ import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RutaRepository {
+public class RutaRepository implements CRUD<Ruta>{
 
     private static final String RUTA_ARCHIVO = "src/resources/rutas.json";
 
@@ -40,8 +40,9 @@ public class RutaRepository {
         dto.precio = ruta.get_precio();
         return dto;
     }
-
-    public static boolean crear_ruta(Ruta nueva_ruta){
+    
+    @Override
+    public boolean crear(Ruta nueva_ruta){
         List<RutaDTO> rutas = null;
 
         try (Reader reader = new FileReader(RUTA_ARCHIVO)) {
@@ -75,8 +76,8 @@ public class RutaRepository {
         }
     }
 
-
-    public static Ruta buscar_ruta(String id_ruta){
+    @Override
+    public Ruta buscar(String id_ruta){
         List<RutaDTO> rutas = null;
 
         try (Reader reader = new FileReader(RUTA_ARCHIVO)) {
@@ -99,7 +100,8 @@ public class RutaRepository {
         return null;
     }
 
-    public static boolean actualizar_ruta(Ruta ruta_editar){
+    @Override
+    public boolean actualizar(Ruta ruta_editar){
         List<RutaDTO> rutas = null;
 
         try (Reader reader = new FileReader(RUTA_ARCHIVO)) {
@@ -133,7 +135,8 @@ public class RutaRepository {
         }
     }
 
-    public static boolean eliminar_ruta(String id_ruta){
+    @Override
+    public boolean eliminar(String id_ruta){
         List<RutaDTO> rutasDto = null;
 
         try (Reader reader = new FileReader(RUTA_ARCHIVO)) {
@@ -166,8 +169,9 @@ public class RutaRepository {
             return false;
         }
     }
-
-    public static List<Ruta> listar_rutas(){
+    
+    @Override
+    public List<Ruta> listar(){
         List<RutaDTO> rutasDto = null;
         List<Ruta> rutas = new ArrayList<>();
 

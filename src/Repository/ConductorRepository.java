@@ -11,7 +11,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ConductorRepository {
+public class ConductorRepository implements CRUD<Conductor>{
 
     private static final String RUTA_ARCHIVO = "src/resources/conductores.json";
 
@@ -47,8 +47,9 @@ public class ConductorRepository {
         conductordto.dias_descanso = conductor.get_dias_descanso();
         return conductordto;
     }
-
-    public static boolean crear_conductor(Conductor nuevo_conductor) {
+    
+    @Override
+    public boolean crear(Conductor nuevo_conductor) {
         List<ConductorDTO> conductores = null;
 
         try (Reader reader = new FileReader(RUTA_ARCHIVO)) {
@@ -83,7 +84,8 @@ public class ConductorRepository {
         }
     }
 
-    public static Conductor buscar_conductor(String dni){
+    @Override
+    public Conductor buscar(String dni){
         List<ConductorDTO> conductores = null;
 
         try (Reader reader = new FileReader(RUTA_ARCHIVO)) {
@@ -103,8 +105,9 @@ public class ConductorRepository {
         }
         return null;
     }
-
-    public static boolean actualizar_conductor(Conductor conductor_editar){
+    
+    @Override
+    public boolean actualizar(Conductor conductor_editar){
         List<ConductorDTO> conductores = null;
 
         try (Reader reader = new FileReader(RUTA_ARCHIVO)) {
@@ -144,8 +147,9 @@ public class ConductorRepository {
             return false;
         }
     }
-
-    public static boolean eliminar_conductor(String dni){
+    
+    @Override
+    public boolean eliminar(String dni){
         List<ConductorDTO> conductores = null;
 
         try (Reader reader = new FileReader(RUTA_ARCHIVO)) {
@@ -185,8 +189,9 @@ public class ConductorRepository {
             return false;
         }
     }
-
-    public static List<Conductor> listar_conductores(){
+    
+    @Override
+    public List<Conductor> listar(){
 
         List<ConductorDTO> conductoresDto = null;
         List<Conductor> conductores = new ArrayList<>();

@@ -16,7 +16,7 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BoletoRepository {
+public class BoletoRepository implements CRUD<Boleto>{
 
     private static final String RUTA_ARCHIVO = "src/resources/boletos.json";
 
@@ -28,8 +28,8 @@ public class BoletoRepository {
     }
 
     private static Boleto convertirDto_Boleto(BoletoDTO boletoDTO) {
-        Pasajero pasajero = PasajeroRepository.buscar_pasajero(boletoDTO.dni_pasajero);
-        Viaje viaje = ViajeRepository.buscar_viaje(boletoDTO.id_viaje);
+        Pasajero pasajero = new PasajeroRepository().buscar(boletoDTO.dni_pasajero);
+        Viaje viaje = new ViajeRepository().buscar(boletoDTO.id_viaje);
         return new Boleto(boletoDTO.id_boleto, pasajero, viaje, boletoDTO.precio);
     }
 
@@ -41,8 +41,9 @@ public class BoletoRepository {
         boletoDto.precio = boleto.get_precio();
         return boletoDto;
     }
-
-    public static boolean crear_boleto(Boleto nuevo_boleto) {
+    
+    @Override
+    public boolean crear(Boleto nuevo_boleto) {
         List<BoletoDTO> boletos = null;
 
         try (Reader reader = new FileReader(RUTA_ARCHIVO)) {
@@ -75,8 +76,9 @@ public class BoletoRepository {
             return false;
         }
     }
-
-    public static Boleto buscar_boleto(String id_boleto) {
+    
+    @Override
+    public Boleto buscar(String id_boleto) {
         List<BoletoDTO> boletos = null;
 
         try (Reader reader = new FileReader(RUTA_ARCHIVO)) {
@@ -99,7 +101,8 @@ public class BoletoRepository {
         return null;
     }
 
-    public static boolean actualizar_boleto(Boleto boleto_editar) {
+    @Override
+    public boolean actualizar(Boleto boleto_editar) {
         List<BoletoDTO> boletos = null;
 
         try (Reader reader = new FileReader(RUTA_ARCHIVO)) {
@@ -132,8 +135,9 @@ public class BoletoRepository {
             return false;
         }
     }
-
-    public static boolean eliminar_boleto(String id_boleto) {
+    
+    @Override
+    public boolean eliminar(String id_boleto) {
         List<BoletoDTO> boletos = null;
 
         try (Reader reader = new FileReader(RUTA_ARCHIVO)) {
@@ -166,8 +170,9 @@ public class BoletoRepository {
             return false;
         }
     }
-
-    public static List<Boleto> listar_boletos() {
+    
+    @Override
+    public List<Boleto> listar() {
         List<BoletoDTO> boletosDto = null;
         List<Boleto> boletos = new ArrayList<>();
 

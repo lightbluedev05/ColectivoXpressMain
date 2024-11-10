@@ -29,11 +29,11 @@ public class Boleto {
             int id_aux = 10000 + random.nextInt(90000);
             id = String.format("%05d", id_aux);
 
-        } while (BoletoRepository.buscar_boleto(id) != null);
+        } while (new BoletoRepository().buscar(id) != null);
 
         Boleto nuevo_boleto = new Boleto(id, pasajero, viaje, viaje.get_ruta().get_precio());
 
-        return BoletoRepository.crear_boleto(nuevo_boleto);
+        return new BoletoRepository().crear(nuevo_boleto);
     }
 
 
