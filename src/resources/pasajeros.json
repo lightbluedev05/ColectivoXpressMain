@@ -1,52 +1,32 @@
 [
   {
-    "nombres": "Mihael",
-    "apellidos": "Cristobal",
-    "telefono": "mihael.cristobal@unmsm.edu.pe",
-    "dni": "71632395",
-    "distrito": "Puente Piedra",
-    "fecha_nacimiento": "05/01/2006",
-    "contrasena": "1234",
-    "numero_viajes": 0
+    "nombre": "1",
+    "correo": "1",
+    "dni": "1",
+    "fecha_nacimiento": "2011/11/11",
+    "contrasena": "1",
+    "distrito": "1",
+    "provincia": "1",
+    "departamento": "1"
   },
   {
-    "nombres": "Alonso",
-    "apellidos": "Luque",
-    "telefono": "luquealonso151@gmail.com",
-    "dni": "74982105",
-    "distrito": "S.M.P",
-    "fecha_nacimiento": "25/01/2005",
-    "contrasena": "123456",
-    "numero_viajes": 0
+    "nombre": "2",
+    "correo": "2",
+    "dni": "2",
+    "fecha_nacimiento": "2022/02/22",
+    "contrasena": "2",
+    "distrito": "2",
+    "provincia": "2",
+    "departamento": "2"
   },
   {
-    "nombres": "Martin",
-    "apellidos": "Perez",
-    "telefono": "miguelsoliscunza24@gmail.com",
-    "dni": "00000000",
-    "distrito": "Comas",
-    "fecha_nacimiento": "00/00/0000",
-    "contrasena": "1234",
-    "numero_viajes": 0
-  },
-  {
-    "nombres": "Pedro Jr",
-    "apellidos": "Suyco Rivera",
-    "telefono": "cedkvarojas@gmail.com",
-    "dni": "98765432",
-    "distrito": "San Martin de Pobres",
-    "fecha_nacimiento": "01/01/2002",
-    "contrasena": "123456",
-    "numero_viajes": 0
-  },
-  {
-    "nombres": "",
-    "apellidos": "",
-    "telefono": "",
-    "dni": "",
-    "distrito": "",
-    "fecha_nacimiento": "",
-    "contrasena": "",
-    "numero_viajes": 0
+    "nombre": "3",
+    "correo": "3",
+    "dni": "3",
+    "fecha_nacimiento": "2005-12-12",
+    "contrasena": "3",
+    "distrito": "3",
+    "provincia": "3",
+    "departamento": "3"
   }
 ]

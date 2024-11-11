@@ -7,6 +7,7 @@ import com.google.gson.reflect.TypeToken;
 import java.io.*;
 import java.lang.reflect.Type;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,7 +27,8 @@ public class PasajeroRepository implements CRUD<Pasajero>{
     }
 
     private static Pasajero convertirDto_Pasajero(PasajeroDTO dto){
-        LocalDate fecha = LocalDate.parse(dto.fecha_nacimiento);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd"); // Cambia el formato según sea necesario
+        LocalDate fecha = LocalDate.parse(dto.fecha_nacimiento, formatter);
         return new Pasajero(dto.nombre, dto.correo, dto.dni, fecha, dto.contrasena,
                 dto.distrito, dto.provincia, dto.departamento);
     }
