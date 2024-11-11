@@ -17,7 +17,26 @@ import java.util.List;
 public class AdminRepository implements CRUD<Admin>{
 
     private static final String RUTA_ARCHIVO = "src/resources/admins.json";
+    
+    
+    private static class AdminDTO {
+        private String codigo;
+        private String contrasena;
+    }
 
+    private static Admin convertirDto_Admin(AdminDTO adminDTO) {
+        return new Admin(adminDTO.codigo, adminDTO.contrasena);
+    }
+
+    private static AdminDTO convertirAdmin_Dto(Admin admin) {
+        AdminDTO adminDto = new AdminDTO();
+        adminDto.codigo = admin.get_codigo();
+        adminDto.contrasena = admin.get_contrasena();
+        return adminDto;
+    }
+    
+    
+    
     @Override
     public boolean crear(Admin nuevo_admin) {
         List<AdminDTO> admins = null;
@@ -179,21 +198,7 @@ public class AdminRepository implements CRUD<Admin>{
         return admins;
     }
 
-    private static class AdminDTO {
-        private String codigo;
-        private String contrasena;
-    }
-
-    private static Admin convertirDto_Admin(AdminDTO adminDTO) {
-        return new Admin(adminDTO.codigo, adminDTO.contrasena);
-    }
-
-    private static AdminDTO convertirAdmin_Dto(Admin admin) {
-        AdminDTO adminDto = new AdminDTO();
-        adminDto.codigo = admin.get_codigo();
-        adminDto.contrasena = admin.get_contrasena();
-        return adminDto;
-    }
+    
 
 
     public static HashMap<String, Object> obtener_configuraciones(){

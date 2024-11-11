@@ -2,10 +2,12 @@
 package Vista;
 
 import Models.Admin;
+import Views2.ConductoresAdmin;
 import Views2.Destinos;
 import Views2.IniciarSesionPrincipal;
 import Views2.Inicio;
 import Views2.Nosotros;
+import Views2.PerfilAdmin;
 import java.awt.BorderLayout;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -73,10 +75,11 @@ public class DashboardAdmin extends javax.swing.JFrame {
         Background = new javax.swing.JPanel();
         jPanelConEncabezadoColectivo1 = new Vista.JPanelConEncabezadoColectivo();
         menu = new javax.swing.JPanel();
-        buttonInicio = new javax.swing.JButton();
-        buttonDestinos = new javax.swing.JButton();
-        buttonIniciarSesion = new javax.swing.JButton();
-        buttonNosotros = new javax.swing.JButton();
+        perfil_button = new javax.swing.JButton();
+        rutas_button = new javax.swing.JButton();
+        conductores_button = new javax.swing.JButton();
+        regulacion_button = new javax.swing.JButton();
+        pasajeros_button = new javax.swing.JButton();
         header = new javax.swing.JPanel();
         fecha = new javax.swing.JLabel();
         content = new javax.swing.JPanel();
@@ -99,55 +102,69 @@ public class DashboardAdmin extends javax.swing.JFrame {
 
         menu.setBackground(new java.awt.Color(0, 0, 204));
 
-        buttonInicio.setBackground(new java.awt.Color(0,0,0,0));
-        buttonInicio.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
-        buttonInicio.setForeground(new java.awt.Color(255, 255, 255));
-        buttonInicio.setText("INICIO");
-        buttonInicio.setBorder(null);
-        buttonInicio.setBorderPainted(false);
-        buttonInicio.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        buttonInicio.addActionListener(new java.awt.event.ActionListener() {
+        perfil_button.setBackground(new java.awt.Color(0,0,0,0));
+        perfil_button.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
+        perfil_button.setForeground(new java.awt.Color(255, 255, 255));
+        perfil_button.setText("PERFIL");
+        perfil_button.setBorder(null);
+        perfil_button.setBorderPainted(false);
+        perfil_button.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        perfil_button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonInicioActionPerformed(evt);
+                perfil_buttonActionPerformed(evt);
             }
         });
 
-        buttonDestinos.setBackground(new java.awt.Color(0,0,0,0));
-        buttonDestinos.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
-        buttonDestinos.setForeground(new java.awt.Color(255, 255, 255));
-        buttonDestinos.setText("DESTINOS");
-        buttonDestinos.setBorder(null);
-        buttonDestinos.setBorderPainted(false);
-        buttonDestinos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        buttonDestinos.addActionListener(new java.awt.event.ActionListener() {
+        rutas_button.setBackground(new java.awt.Color(0,0,0,0));
+        rutas_button.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
+        rutas_button.setForeground(new java.awt.Color(255, 255, 255));
+        rutas_button.setText("RUTAS");
+        rutas_button.setBorder(null);
+        rutas_button.setBorderPainted(false);
+        rutas_button.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        rutas_button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonDestinosActionPerformed(evt);
+                rutas_buttonActionPerformed(evt);
             }
         });
 
-        buttonIniciarSesion.setBackground(new java.awt.Color(0,0,0,0));
-        buttonIniciarSesion.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
-        buttonIniciarSesion.setForeground(new java.awt.Color(255, 255, 255));
-        buttonIniciarSesion.setText("MENU DE INGRESO");
-        buttonIniciarSesion.setBorder(null);
-        buttonIniciarSesion.setBorderPainted(false);
-        buttonIniciarSesion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        buttonIniciarSesion.addActionListener(new java.awt.event.ActionListener() {
+        conductores_button.setBackground(new java.awt.Color(0,0,0,0));
+        conductores_button.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
+        conductores_button.setForeground(new java.awt.Color(255, 255, 255));
+        conductores_button.setText("CONDUCTORES");
+        conductores_button.setBorder(null);
+        conductores_button.setBorderPainted(false);
+        conductores_button.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        conductores_button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonIniciarSesionActionPerformed(evt);
+                conductores_buttonActionPerformed(evt);
             }
         });
 
-        buttonNosotros.setBackground(new java.awt.Color(0,0,0,0));
-        buttonNosotros.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
-        buttonNosotros.setForeground(new java.awt.Color(255, 255, 255));
-        buttonNosotros.setText("NOSOTROS");
-        buttonNosotros.setBorder(null);
-        buttonNosotros.setBorderPainted(false);
-        buttonNosotros.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        buttonNosotros.addActionListener(new java.awt.event.ActionListener() {
+        regulacion_button.setBackground(new java.awt.Color(0,0,0,0));
+        regulacion_button.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
+        regulacion_button.setForeground(new java.awt.Color(255, 255, 255));
+        regulacion_button.setText("REGULACION LABORAL");
+        regulacion_button.setBorder(null);
+        regulacion_button.setBorderPainted(false);
+        regulacion_button.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        regulacion_button.setMargin(new java.awt.Insets(0, 14, 2, 14));
+        regulacion_button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonNosotrosActionPerformed(evt);
+                regulacion_buttonActionPerformed(evt);
+            }
+        });
+
+        pasajeros_button.setBackground(new java.awt.Color(0,0,0,0));
+        pasajeros_button.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
+        pasajeros_button.setForeground(new java.awt.Color(255, 255, 255));
+        pasajeros_button.setText("PASAJEROS");
+        pasajeros_button.setBorder(null);
+        pasajeros_button.setBorderPainted(false);
+        pasajeros_button.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        pasajeros_button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pasajeros_buttonActionPerformed(evt);
             }
         });
 
@@ -155,22 +172,31 @@ public class DashboardAdmin extends javax.swing.JFrame {
         menu.setLayout(menuLayout);
         menuLayout.setHorizontalGroup(
             menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(buttonInicio, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(buttonIniciarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(buttonDestinos, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(buttonNosotros, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(menuLayout.createSequentialGroup()
+                .addGroup(menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(perfil_button, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(conductores_button, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(rutas_button, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(pasajeros_button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(regulacion_button, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         menuLayout.setVerticalGroup(
             menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(menuLayout.createSequentialGroup()
                 .addGap(50, 50, 50)
-                .addComponent(buttonInicio, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(buttonIniciarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(buttonDestinos, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(buttonNosotros, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(perfil_button, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(conductores_button, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(rutas_button, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(pasajeros_button, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(regulacion_button, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         header.setBackground(new java.awt.Color(0, 153, 255));
@@ -186,17 +212,18 @@ public class DashboardAdmin extends javax.swing.JFrame {
             headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(headerLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(fecha)
-                .addContainerGap(481, Short.MAX_VALUE))
+                .addComponent(fecha, javax.swing.GroupLayout.PREFERRED_SIZE, 701, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         headerLayout.setVerticalGroup(
             headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(headerLayout.createSequentialGroup()
-                .addComponent(fecha)
-                .addGap(0, 18, Short.MAX_VALUE))
+                .addComponent(fecha, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         content.setBackground(new java.awt.Color(0, 0, 0));
+        content.setPreferredSize(new java.awt.Dimension(1010, 580));
 
         javax.swing.GroupLayout contentLayout = new javax.swing.GroupLayout(content);
         content.setLayout(contentLayout);
@@ -224,15 +251,17 @@ public class DashboardAdmin extends javax.swing.JFrame {
         BackgroundLayout.setVerticalGroup(
             BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(BackgroundLayout.createSequentialGroup()
-                .addComponent(jPanelConEncabezadoColectivo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(50, 50, 50)
-                .addComponent(content, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(BackgroundLayout.createSequentialGroup()
-                .addGap(90, 90, 90)
-                .addComponent(header, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(BackgroundLayout.createSequentialGroup()
                 .addGap(87, 87, 87)
                 .addComponent(menu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(BackgroundLayout.createSequentialGroup()
+                .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanelConEncabezadoColectivo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(BackgroundLayout.createSequentialGroup()
+                        .addGap(90, 90, 90)
+                        .addComponent(header, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(content, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -250,21 +279,25 @@ public class DashboardAdmin extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void buttonInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonInicioActionPerformed
-        ShowJPanel(new Inicio());
-    }//GEN-LAST:event_buttonInicioActionPerformed
+    private void pasajeros_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pasajeros_buttonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pasajeros_buttonActionPerformed
 
-    private void buttonDestinosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonDestinosActionPerformed
-        ShowJPanel(new Destinos());
-    }//GEN-LAST:event_buttonDestinosActionPerformed
-
-    private void buttonIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonIniciarSesionActionPerformed
-        
-    }//GEN-LAST:event_buttonIniciarSesionActionPerformed
-
-    private void buttonNosotrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonNosotrosActionPerformed
+    private void regulacion_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_regulacion_buttonActionPerformed
         ShowJPanel(new Nosotros());
-    }//GEN-LAST:event_buttonNosotrosActionPerformed
+    }//GEN-LAST:event_regulacion_buttonActionPerformed
+
+    private void conductores_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_conductores_buttonActionPerformed
+        ShowJPanel(new ConductoresAdmin(admin));
+    }//GEN-LAST:event_conductores_buttonActionPerformed
+
+    private void rutas_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rutas_buttonActionPerformed
+        ShowJPanel(new Destinos());
+    }//GEN-LAST:event_rutas_buttonActionPerformed
+
+    private void perfil_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_perfil_buttonActionPerformed
+        ShowJPanel(new PerfilAdmin(admin));
+    }//GEN-LAST:event_perfil_buttonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -306,14 +339,15 @@ public class DashboardAdmin extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Background;
-    private javax.swing.JButton buttonDestinos;
-    private javax.swing.JButton buttonIniciarSesion;
-    private javax.swing.JButton buttonInicio;
-    private javax.swing.JButton buttonNosotros;
+    private javax.swing.JButton conductores_button;
     private javax.swing.JPanel content;
     private javax.swing.JLabel fecha;
     private javax.swing.JPanel header;
     private Vista.JPanelConEncabezadoColectivo jPanelConEncabezadoColectivo1;
     private javax.swing.JPanel menu;
+    private javax.swing.JButton pasajeros_button;
+    private javax.swing.JButton perfil_button;
+    private javax.swing.JButton regulacion_button;
+    private javax.swing.JButton rutas_button;
     // End of variables declaration//GEN-END:variables
 }

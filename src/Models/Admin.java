@@ -32,16 +32,14 @@ public class Admin {
     }
 
     public boolean actualizar_codigo(String nuevo_codigo){
-        Admin admin = new AdminRepository().buscar(this.get_codigo());
-
-        if(admin == null){
+        if(new AdminRepository().buscar(nuevo_codigo) != null){
             return false;
         }
-
+        
         new AdminRepository().eliminar(this.get_codigo());
 
-        admin.set_codigo(nuevo_codigo);
-        return new AdminRepository().crear(admin);
+        this.set_codigo(nuevo_codigo);
+        return new AdminRepository().crear(this);
     }
 
     public boolean actualizar_contrasena(String nueva_contrasena){
