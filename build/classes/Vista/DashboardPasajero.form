@@ -42,9 +42,9 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Component id="jPanelConEncabezadoColectivo1" max="32767" attributes="0"/>
-              <Component id="menu" min="-2" max="-2" attributes="0"/>
               <Group type="102" attributes="0">
-                  <EmptySpace min="-2" pref="270" max="-2" attributes="0"/>
+                  <Component id="menu" min="-2" pref="269" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="content" max="32767" attributes="0"/>
                       <Component id="header" max="32767" attributes="0"/>
@@ -101,23 +101,29 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="buttonInicio" min="-2" pref="270" max="-2" attributes="0"/>
-                  <Component id="buttonIniciarSesion" min="-2" pref="270" max="-2" attributes="0"/>
-                  <Component id="buttonDestinos" min="-2" pref="270" max="-2" attributes="0"/>
-                  <Component id="buttonNosotros" min="-2" pref="270" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="buttonInicio" min="-2" pref="270" max="-2" attributes="0"/>
+                          <Component id="buttonNosotros" alignment="0" min="-2" pref="270" max="-2" attributes="0"/>
+                          <Component id="buttonIniciarSesion" alignment="0" min="-2" pref="270" max="-2" attributes="0"/>
+                          <Component id="buttonDestinos" min="-2" pref="270" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                  </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <EmptySpace min="50" pref="50" max="-2" attributes="0"/>
-                      <Component id="buttonInicio" min="-2" pref="70" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                      <Component id="buttonIniciarSesion" min="-2" pref="70" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                      <Component id="buttonDestinos" min="-2" pref="70" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="94" max="-2" attributes="0"/>
+                      <Component id="buttonIniciarSesion" min="-2" pref="45" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                      <Component id="buttonDestinos" min="-2" pref="45" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
                       <Component id="buttonNosotros" min="-2" pref="70" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="buttonInicio" min="-2" pref="70" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -182,7 +188,7 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="MENU DE INGRESO"/>
+                <Property name="text" type="java.lang.String" value="Perfil"/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
                 </Property>
