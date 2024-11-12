@@ -1,30 +1,51 @@
 [
   {
+    "id_ruta": "51704",
     "origen": "Lima",
-    "destino": "Arequipa",
-    "tiempo_aproximado": "12h",
-    "precio": 1.5,
-    "precio_oferta": 0.0
+    "destino": "Trujillo",
+    "tiempo_aproximado": "08:00",
+    "precio": 90.0
   },
   {
-    "origen": "Lima",
-    "destino": "Tacna",
-    "tiempo_aproximado": "10h",
-    "precio": 1.5,
-    "precio_oferta": 0.0
+    "id_ruta": "46392",
+    "origen": "Trujillo",
+    "destino": "Chiclayo",
+    "tiempo_aproximado": "03:15",
+    "precio": 45.5
   },
   {
-    "origen": "Lima",
-    "destino": "Chancay",
-    "tiempo_aproximado": "10",
-    "precio": 1.5,
-    "precio_oferta": 0.0
+    "id_ruta": "87064",
+    "origen": "Chiclayo",
+    "destino": "Piura",
+    "tiempo_aproximado": "02:45",
+    "precio": 40.0
   },
   {
+    "id_ruta": "29518",
+    "origen": "Piura",
+    "destino": "Tumbes",
+    "tiempo_aproximado": "02:30",
+    "precio": 50.0
+  },
+  {
+    "id_ruta": "63197",
     "origen": "Lima",
-    "destino": "Ica",
-    "tiempo_aproximado": "6",
-    "precio": 1.5,
-    "precio_oferta": 0.0
+    "destino": "Huancayo",
+    "tiempo_aproximado": "07:20",
+    "precio": 95.0
+  },
+  {
+    "id_ruta": "47916",
+    "origen": "Huancayo",
+    "destino": "Ayacucho",
+    "tiempo_aproximado": "05:10",
+    "precio": 85.0
+  },
+  {
+    "id_ruta": "80420",
+    "origen": "Lima",
+    "destino": "Piura",
+    "tiempo_aproximado": "01:02",
+    "precio": 12.0
   }
 ]

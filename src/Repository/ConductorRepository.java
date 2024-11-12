@@ -29,8 +29,10 @@ public class ConductorRepository implements CRUD<Conductor>{
 
     private static Conductor convertirDto_Conductor(ConductorDTO dto){
         LocalDate fecha = LocalDate.parse(dto.fecha_nacimiento);
-        return new Conductor(dto.nombre, dto.correo, dto.dni, fecha, dto.contrasena,
+        Conductor conductor = new Conductor(dto.nombre, dto.correo, dto.dni, fecha, dto.contrasena,
                 dto.distrito, dto.provincia, dto.departamento);
+        conductor.set_dias_descanso(dto.dias_descanso);
+        return conductor;
     }
 
     private static ConductorDTO convertirConductor_Dto(Conductor conductor){

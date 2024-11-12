@@ -27,8 +27,13 @@ public class RutaRepository implements CRUD<Ruta>{
     }
 
     private static Ruta convertirDto_Ruta(RutaDTO dto){
+        
+        String[] tiempo = dto.tiempo_aproximado.split(":");
+        int horas = Integer.parseInt(tiempo[0]);
+        int minutos = Integer.parseInt(tiempo[1]);
+        
         return new Ruta(dto.id_ruta, dto.origen, dto.destino,
-                Duration.parse(dto.tiempo_aproximado), dto.precio);
+                Duration.ofHours(horas).plusMinutes(minutos), dto.precio);
     }
 
     private static RutaDTO convertirRuta_Dto(Ruta ruta){
@@ -36,8 +41,12 @@ public class RutaRepository implements CRUD<Ruta>{
         dto.id_ruta = ruta.get_id_ruta();
         dto.origen = ruta.get_origen();
         dto.destino = ruta.get_destino();
-        dto.tiempo_aproximado = ruta.get_tiempo_aproximado().toString();
         dto.precio = ruta.get_precio();
+        
+        long horas = ruta.get_tiempo_aproximado().toHours();
+        long minutos = ruta.get_tiempo_aproximado().toMinutesPart();
+        
+        dto.tiempo_aproximado = String.format("%02d:%02d", horas, minutos);
         return dto;
     }
     
@@ -46,7 +55,7 @@ public class RutaRepository implements CRUD<Ruta>{
         List<RutaDTO> rutas = null;
 
         try (Reader reader = new FileReader(RUTA_ARCHIVO)) {
-            Type listType = new TypeToken<ArrayList<Ruta>>(){}.getType();
+            Type listType = new TypeToken<ArrayList<RutaDTO>>(){}.getType();
             Gson gson = new Gson();
             rutas = gson.fromJson(reader, listType);
         } catch (IOException ignored) {
@@ -54,7 +63,7 @@ public class RutaRepository implements CRUD<Ruta>{
 
         if(rutas != null){
             for(RutaDTO ruta : rutas){
-                if(ruta.id_ruta.equals(nueva_ruta.get_id_ruta())){
+                if(ruta.origen.equals(nueva_ruta.get_origen()) && ruta.destino.equals(nueva_ruta.get_destino())){
                     return false;
                 }
             }
@@ -149,13 +158,20 @@ public class RutaRepository implements CRUD<Ruta>{
         if(rutasDto == null){
             return false;
         }
-
+        
+        
+        boolean encontrado = false;
         for(int i=0; i<rutasDto.size(); i++){
             RutaDTO ruta = rutasDto.get(i);
             if(ruta.id_ruta.equals(id_ruta)){
                 rutasDto.remove(i);
+                encontrado = true;
                 break;
             }
+        }
+        
+        if(!encontrado){
+            return false;
         }
 
         Gson gson = new GsonBuilder().setPrettyPrinting().create();

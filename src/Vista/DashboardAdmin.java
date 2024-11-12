@@ -2,12 +2,13 @@
 package Vista;
 
 import Models.Admin;
-import Views2.ConductoresAdmin;
+import Views2.AdminConductoresPanel;
 import Views2.Destinos;
 import Views2.IniciarSesionPrincipal;
 import Views2.Inicio;
 import Views2.Nosotros;
-import Views2.PerfilAdmin;
+import Views2.AdminPerfilPanel;
+import Views2.AdminRutasPanel;
 import java.awt.BorderLayout;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -129,7 +130,7 @@ public class DashboardAdmin extends javax.swing.JFrame {
         });
 
         conductores_button.setBackground(new java.awt.Color(0,0,0,0));
-        conductores_button.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
+        conductores_button.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         conductores_button.setForeground(new java.awt.Color(255, 255, 255));
         conductores_button.setText("CONDUCTORES");
         conductores_button.setBorder(null);
@@ -288,15 +289,15 @@ public class DashboardAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_regulacion_buttonActionPerformed
 
     private void conductores_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_conductores_buttonActionPerformed
-        ShowJPanel(new ConductoresAdmin(admin));
+        ShowJPanel(new AdminConductoresPanel(admin));
     }//GEN-LAST:event_conductores_buttonActionPerformed
 
     private void rutas_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rutas_buttonActionPerformed
-        ShowJPanel(new Destinos());
+        ShowJPanel(new AdminRutasPanel(admin));
     }//GEN-LAST:event_rutas_buttonActionPerformed
 
     private void perfil_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_perfil_buttonActionPerformed
-        ShowJPanel(new PerfilAdmin(admin));
+        ShowJPanel(new AdminPerfilPanel(admin));
     }//GEN-LAST:event_perfil_buttonActionPerformed
 
     /**

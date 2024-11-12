@@ -10,14 +10,14 @@ import Models.Admin;
  *
  * @author Mihae
  */
-public class PerfilAdmin extends javax.swing.JPanel {
+public class AdminPerfilPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form PerfilAdmin
      */
     
     private Admin admin;
-    public PerfilAdmin(Admin admin) {
+    public AdminPerfilPanel(Admin admin) {
         this.admin = admin;
         initComponents();
         nuevo_codigo_label.setVisible(false);

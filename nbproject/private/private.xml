@@ -8,13 +8,20 @@
             <file>file:/C:/Users/Mihae/Programacion/ColectivoXpressMain/ColectivoXpressMain/src/resources/conductores.json</file>
             <file>file:/C:/Users/Mihae/Programacion/ColectivoXpressMain/ColectivoXpressMain/src/Repository/PasajeroRepository.java</file>
             <file>file:/C:/Users/Mihae/Programacion/ColectivoXpressMain/ColectivoXpressMain/src/Vista/LoginAdmin.java</file>
+            <file>file:/C:/Users/Mihae/Programacion/ColectivoXpressMain/ColectivoXpressMain/src/Views2/AdminConductorCrear.java</file>
+            <file>file:/C:/Users/Mihae/Programacion/ColectivoXpressMain/ColectivoXpressMain/src/Repository/AdminRepository.java</file>
+            <file>file:/C:/Users/Mihae/Programacion/ColectivoXpressMain/ColectivoXpressMain/src/Views2/AdminConductoresPanel.java</file>
             <file>file:/C:/Users/Mihae/Programacion/ColectivoXpressMain/ColectivoXpressMain/src/Vista/DashboardPasajero.java</file>
             <file>file:/C:/Users/Mihae/Programacion/ColectivoXpressMain/ColectivoXpressMain/src/Vista/DashboardConductor.java</file>
+            <file>file:/C:/Users/Mihae/Programacion/ColectivoXpressMain/ColectivoXpressMain/src/Models/Admin.java</file>
             <file>file:/C:/Users/Mihae/Programacion/ColectivoXpressMain/ColectivoXpressMain/src/Models/Pasajero.java</file>
             <file>file:/C:/Users/Mihae/Programacion/ColectivoXpressMain/ColectivoXpressMain/src/resources/admins.json</file>
+            <file>file:/C:/Users/Mihae/Programacion/ColectivoXpressMain/ColectivoXpressMain/src/Models/Conductor.java</file>
             <file>file:/C:/Users/Mihae/Programacion/ColectivoXpressMain/ColectivoXpressMain/src/Vista/RegistroPasajero.java</file>
             <file>file:/C:/Users/Mihae/Programacion/ColectivoXpressMain/ColectivoXpressMain/src/Vista/LoginPasajero.java</file>
+            <file>file:/C:/Users/Mihae/Programacion/ColectivoXpressMain/ColectivoXpressMain/src/Views2/AdminPerfilPanel.java</file>
             <file>file:/C:/Users/Mihae/Programacion/ColectivoXpressMain/ColectivoXpressMain/src/Vista/Dashboard.java</file>
+            <file>file:/C:/Users/Mihae/Programacion/ColectivoXpressMain/ColectivoXpressMain/src/Repository/ConductorRepository.java</file>
             <file>file:/C:/Users/Mihae/Programacion/ColectivoXpressMain/ColectivoXpressMain/src/resources/pasajeros.json</file>
             <file>file:/C:/Users/Mihae/Programacion/ColectivoXpressMain/ColectivoXpressMain/src/Vista/MenuPrincipal.java</file>
         </group>
